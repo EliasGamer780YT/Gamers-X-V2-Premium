@@ -1545,6 +1545,6 @@ section5:addButton("ReloadScript", function()
     _G.infinjump       = false
     _G.SphereActivated = false 
     _G.Dist            = 0
-    loadstring(game:HttpGet("https://gist.githubusercontent.com/S1Adriano/9cd6e1596ac534337a3a99f8b4207daa/raw/0dc2c1d72fcfa9eb040d0605bd0bf9a9dff2bc71/Sub"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/Gamers%20X%20Premium%20V2e.Lua"))()
     for i,v in pairs(ct) do v:Disconnect() end
 end)
