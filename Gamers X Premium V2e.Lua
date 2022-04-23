@@ -1431,6 +1431,7 @@ section4:addButton("Equiptools", function()
         end
     end
 end)
+
 --Barrier and undermine
 local section4 = page:addSection("Barrier & Undermine Block")
 --Barrier
@@ -1495,7 +1496,55 @@ section4:addButton("Undermine Barrier", function()
         Partz:Destroy()
     end
 end)
+--Free Roms-
+section4:addButton("Free Vips", function()
+    AdriPart = game.workspace.Lobby["Mega VIP Room"].Teleport.Enter["Teleporter B"]
+    AdriPart:Clone().Parent = game.workspace.Lobby["Mega VIP Room"].Teleport.Enter
+    game.workspace.Lobby["Mega VIP Room"].Teleport.Enter["Teleporter B"]:Destroy()
+    wait()
+    game.workspace.Lobby["Mega VIP Room"].Teleport.Enter["Teleporter B"].Touched:Connect(function(hit)
+        local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+        player.Character.HumanoidRootPart.CFrame = CFrame.new(-1.06104672, 264, 72.2138901)
+    end)
 
+    AdriPart2 = game:GetService("Workspace").Lobby["VIP Room"].Teleport.Enter["Teleporter A"]
+    AdriPart2:Clone().Parent = game:GetService("Workspace").Lobby["VIP Room"].Teleport.Enter
+    game:GetService("Workspace").Lobby["VIP Room"].Teleport.Enter["Teleporter A"]:Destroy()
+    wait()
+    game:GetService("Workspace").Lobby["VIP Room"].Teleport.Enter["Teleporter A"].Touched:Connect(function(hit)
+        local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+        player.Character.HumanoidRootPart.CFrame = CFrame.new(0.324219227, 264, -69.9828949)
+    end)  
+    venyx:Notify("Enabled", "FreeVipsRooms")
+end)
+section4:addButton("Anti-AFK", function()
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+       wait(1)
+       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+    print("Clicked")
+    end)
+
+---Teleprts--
+local section4 = page:addSection("Teleports")
+
+section4:addButton("Lobby", function()
+    game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2, 268, 1)
+end)
+
+section4:addButton("Vip", function()
+    game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.324219227, 264, -69.9828949)
+end)
+
+section4:addButton("Mega vip", function()
+    game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.06104672, 264, 72.2138901)
+end)
+
+section4:addButton("Middle", function()
+    game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2, 171, -9)
+end)
 --themes-
 -- second page
 local theme = venyx:addPage("Theme", 5012544693)
