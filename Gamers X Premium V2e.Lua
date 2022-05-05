@@ -1,6 +1,6 @@
 local muter = false
 for i,v in next, game:GetService("CoreGui"):GetDescendants() do
-    if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V2" then 
+    if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 3.1" then 
         v:Destroy()
     end
 end
@@ -11,7 +11,7 @@ local Meh = game.Players.LocalPlayer
 
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx   = library.new("Gamers X Premium V2", 5013109572)
+local venyx   = library.new("Gamers X Premium V 3.1", 5013109572)
 
 -- themes
 local themes = {
@@ -23,9 +23,12 @@ local themes = {
     TextColor = Color3.fromRGB(0, 0, 0)
 }
 
+local Skyy = game:GetService("CoreGui")["Gamers X Premium V 3.1"]
 
+Skyy.Main.Glow.ImageColor3 = Color3.fromRGB(0, 255, 0)
 -- first page
 local page     = venyx:addPage("Home", 5012544693)
+local section1 = page:addSection("Thanks for Purchase Gamers X Premium")
 local section1 = page:addSection("Toggles And More")
 ---Collect Coins-
 _G.Coin = true
@@ -244,8 +247,11 @@ section1:addButton("Anticheats (Bypass)", function()
         workspace:FindFirstChild("Local"):Destroy()
         workspace:FindFirstChild("MobileFix"):Destroy()
         workspace:FindFirstChild("XboxFix"):Destroy()
+        workspace:FindFirstChild("SelectedExclusive"):Destroy()
         game.workspace.Borders.InvisibleBorder:remove()
         game.workspace.Lobby.KillPlates:remove()
+        game:GetService("Players").LocalPlayer.PlayerGui.Extra.Local:Destroy()
+        game:GetService("Players").LocalPlayer.PlayerGui.Extra.Local:Destroy()
         venyx:Notify("Bypassed", "Bypassed: true")
 
         plr.CharacterAdded:Connect(function()
@@ -469,6 +475,7 @@ section2:addButton("FlingPlayersInRound", function()
     wait()
     game.Players.LocalPlayer.Character:FindFirstChild('Humanoid').PlatformStand = false
 end)
+local section2 = page:addSection("Reachs And AntiHitbox & AntiReach")
 --Reach V1--
 section2:addButton("Reach V1", function()
     local active = true
@@ -1418,7 +1425,7 @@ section3:addButton("love Paragraph", function()
         print("Clicked")
         end)
 
-       
+
 --AntiVoidKill--
 section4:addButton("AntiBucleVoidKill", function()
     workspace.FallenPartsDestroyHeight = -math.huge
@@ -1431,7 +1438,191 @@ section4:addButton("Equiptools", function()
         end
     end
 end)
+--AntiAfk--
+section4:addButton("Anti-AFK", function()
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+       wait(1)
+       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+    print("Clicked")
+    end)
+  
+    section4:addButton("Set-Up Armor", function()
+        local priorpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+               wait(0.01)
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                   CFrame.new(-11.0000038, 264, 61, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+               wait(0.5)
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                   CFrame.new(12, 263.5, 61, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+               wait(0.5)
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = priorpos
+       print("Clicked")
+       end)
+       local section4 = page:addSection("FE Scripts")
+--Spy Ware-
+section4:addButton("Gamers X Chat Private", function()
+--This script reveals ALL hidden messages in the default chat
 
+enabled = true --chat "/Gamers X" to toggle!
+spyOnMyself = true --if true will check your messages too
+public = false --if true will chat the logs publicly (fun, risky)
+publicItalics = true --if true will use /me to stand out
+privateProperties = { --customize private logs
+	Color = Color3.fromRGB(0,255,255); 
+	Font = Enum.Font.SourceSansBold;
+	TextSize = 18;
+}
+
+
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
+local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+local instance = (_G.chatSpyInstance or 0) + 1
+_G.chatSpyInstance = instance
+
+local function onChatted(p,msg)
+	if _G.chatSpyInstance == instance then
+		if p==player and msg:lower():sub(1,4)=="/Gamers X" then
+			enabled = not enabled
+			wait(0.3)
+			privateProperties.Text = "{Gamers "..(enabled and "EN" or "DIS").."ABLED}"
+			StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+		elseif enabled and (spyOnMyself==true or p~=player) then
+			msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+			local hidden = true
+			local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+				if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+					hidden = false
+				end
+			end)
+			wait(1)
+			conn:Disconnect()
+			if hidden and enabled then
+				if public then
+					saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+				else
+					privateProperties.Text = "{Gamers X} [".. p.Name .."]: "..msg
+					StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+				end
+			end
+		end
+	end
+end
+
+for _,p in ipairs(Players:GetPlayers()) do
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end
+Players.PlayerAdded:Connect(function(p)
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end)
+privateProperties.Text = "{Gamers X "..(enabled and "EN" or "DIS").."ABLED}"
+StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+if not player.PlayerGui:FindFirstChild("Chat") then wait(3) end
+local chatFrame = player.PlayerGui.Chat.Frame
+chatFrame.ChatChannelParentFrame.Visible = true
+chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
+        print("Clicked")
+        end)
+
+        --Dex--
+        section4:addButton("DEX V2", function()
+          --credits to infinite yield fe creators
+--it may take a while to load plz be patient if the game isn't small
+-- btw the comment "sirhurt is retarded" isn't made by me, check the source here ok https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source
+
+function randomString()
+	local length = math.random(10,20)
+	local array = {}
+	for i = 1, length do
+		array[i] = string.char(math.random(32, 126))
+	end
+	return table.concat(array)
+end
+
+PARENT = nil
+if (not is_sirhurt_closure) and (syn and syn.protect_gui) then --sirhurt is retarded
+	local Main = Instance.new("ScreenGui")
+	Main.Name = randomString()
+	syn.protect_gui(Main)
+	Main.Parent = game:GetService("CoreGui")
+	PARENT = Main
+elseif PROTOSMASHER_LOADED and get_hidden_gui then
+	local Main = Instance.new("ScreenGui")
+	Main.Name = randomString()
+	Main.Parent = get_hidden_gui()
+	PARENT = Main
+--elseif elysianexecute and gethui then
+--	local Main = Instance.new("ScreenGui")
+--	Main.Name = randomString()
+--	Main.Parent = gethui()
+--	PARENT = Main
+elseif game:GetService("CoreGui"):FindFirstChild('RobloxGui') then
+	PARENT = game:GetService("CoreGui").RobloxGui
+else
+	local Main = Instance.new("ScreenGui")
+	Main.Name = randomString()
+	Main.Parent = game:GetService("CoreGui")
+	PARENT = Main
+end
+
+if PARENT:FindFirstChild'Dex' then
+	PARENT.Dex:Destroy();
+end
+
+local Dex = game:GetObjects("rbxassetid://3567096419")[1]
+Dex.Name = 'Dex'
+Dex.Parent = PARENT
+	
+local function Load(Obj)
+	local function GiveOwnGlobals(Func, Script)
+		local Fenv = {}
+		local RealFenv = {script = Script}
+		local FenvMt = {}
+		FenvMt.__index = function(a,b)
+			if RealFenv[b] == nil then
+				return getfenv()[b]
+			else
+				return RealFenv[b]
+			end
+		end
+		FenvMt.__newindex = function(a, b, c)
+			if RealFenv[b] == nil then
+				getfenv()[b] = c
+			else
+				RealFenv[b] = c
+			end
+		end
+		setmetatable(Fenv, FenvMt)
+		setfenv(Func, Fenv)
+		return Func
+	end
+	local function LoadScripts(Script)
+		if Script.ClassName == "Script" or Script.ClassName == "LocalScript" then
+			spawn(function()
+				GiveOwnGlobals(loadstring(Script.Source, "=" .. Script:GetFullName()), Script)()
+			end)
+		end
+	    for i,v in pairs(Script:GetChildren()) do
+			LoadScripts(v)
+		end
+	end
+	LoadScripts(Obj)
+end
+	
+Load(Dex)
+            print("Clicked")
+            end)
+            section4:addButton("FE HATS", function()
+                loadstring(game:HttpGet("https://pastebin.com/raw/4B4fktPS", true))()
+                print("Clicked")
+                end)
+
+            --Barrier----
 --Barrier and undermine
 local section4 = page:addSection("Barrier & Undermine Block")
 --Barrier
@@ -1517,15 +1708,7 @@ section4:addButton("Free Vips", function()
     end)  
     venyx:Notify("Enabled", "FreeVipsRooms")
 end)
-section4:addButton("Anti-AFK", function()
-    local vu = game:GetService("VirtualUser")
-    game:GetService("Players").LocalPlayer.Idled:connect(function()
-       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-       wait(1)
-       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    end)
-    print("Clicked")
-    end)
+
 
 ---Teleprts--
 local section4 = page:addSection("Teleports")
@@ -1597,3 +1780,41 @@ section5:addButton("ReloadScript", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/Gamers%20X%20Premium%20V2a.Lua"))()
     for i,v in pairs(ct) do v:Disconnect() end
 end)
+
+--Commands-
+game.Players.LocalPlayer.Chatted:connect(function(msg)
+    if msg:sub(1, 9) == "/Lag" then
+        loadstring(game:HttpGet("https://paste.gg/p/anonymous/d3492bd620bd4c46b54680ac80b0fa0d/files/161ddd9c992c4ceba3c298458d45188a/raw", true))()
+      end
+   end)
+   game.Players.LocalPlayer.Chatted:connect(function(msg)
+    if msg:sub(1, 9) == "/KIA" then
+  --// Setting \\--
+local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+      end
+   end)
+
+   game.Players:WaitForChild("Jonathan342820")
+venyx:Notify("Elias ta en partida", "Conche Tu Mare Vali D:")
