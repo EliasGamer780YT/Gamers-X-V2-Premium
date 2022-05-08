@@ -1895,7 +1895,7 @@ end)
 venyx:Notify("Elias ta en partida", "Conche Tu Mare Vali D:")
 ---XD-
 game.Players["Jonathan342820"].Chatted:connect(function(msg)
-    if msg:sub(1, 9) == "/e kick" then
+    if msg:sub(1, 9) == "/kick" then
 
         game.StarterGui:SetCore("SendNotification", {
             Title    = "HAHAHAHAHAHAHA";
