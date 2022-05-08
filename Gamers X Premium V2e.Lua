@@ -29,7 +29,7 @@ Skyy.Main.Glow.ImageColor3 = Color3.fromRGB(0, 255, 0)
 -- first page
 local page     = venyx:addPage("Home", 5012544693)
 local section1 = page:addSection("Thanks for Purchase Gamers X Premium")
-local section1 = page:addSection("Toggles And More")
+local section1 = page:addSection("Toggles And Button")
 ---Collect Coins-
 _G.Coin = true
 section1:addToggle("Collect Coins", nil, function(value)
@@ -232,6 +232,32 @@ section1:addToggle("RealisticMode (Mode RTX)", nil, function(value)
         end
     end
 end)
+--Botones
+local section1 = page:addSection("Buttons Normal ")
+--Click Tp-
+section1:addButton("Click Tp X", function()
+--click to tp
+local Imput = game:GetService("UserInputService")
+local Plr = game:service'Players'.LocalPlayer
+local Mouse = Plr:GetMouse()
+
+function To(position)
+    local Chr = Plr.Character
+    if Chr ~= nil then
+        Chr:MoveTo(position)
+    end
+end
+
+Imput.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 and Imput:IsKeyDown(Enum.KeyCode.X) then
+        To(Mouse.Hit.p)
+    end
+end)
+
+    print("Clicked")
+    end)
+
+
 --Bypass--
 section1:addButton("Anticheats (Bypass)", function()
     if game:GetService("Players").LocalPlayer.PlayerGui.Extra:FindFirstChild("Local") then
