@@ -1,6 +1,6 @@
 local muter = false
 for i,v in next, game:GetService("CoreGui"):GetDescendants() do
-    if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 3.1" then 
+    if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 4.1" then 
         v:Destroy()
     end
 end
@@ -11,7 +11,7 @@ local Meh = game.Players.LocalPlayer
 
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx   = library.new("Gamers X Premium V 3.1", 5013109572)
+local venyx   = library.new("Gamers X Premium V 4.1", 5013109572)
 
 -- themes
 local themes = {
@@ -23,9 +23,9 @@ local themes = {
     TextColor = Color3.fromRGB(0, 0, 0)
 }
 
-local Skyy = game:GetService("CoreGui")["Gamers X Premium V 3.1"]
+local Skyy = game:GetService("CoreGui")["Gamers X Premium V 4.1"]
 
-Skyy.Main.Glow.ImageColor3 = Color3.fromRGB(0, 255, 0)
+Skyy.Main.Glow.ImageColor3 = Color3.fromRGB(255, 14, 14)
 -- first page
 local page     = venyx:addPage("Home", 5012544693)
 local section1 = page:addSection("Thanks for Purchase Gamers X Premium")
@@ -317,9 +317,11 @@ end)
 --fling-
 section1:addButton("Gamers X Fling", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/GamersXFling.Lua", true))()
-    print("Clicked")
     end)
-
+    ---cordenada
+    section1:addButton("Gamers X Cordenates", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/GamersXCordenates.Lua", true))()
+        end)
 --MainStuff--
 local page = venyx:addPage("MainStuff", 5012544693)
 local section2 = page:addSection("Attack And More")
@@ -1253,7 +1255,7 @@ section2:addButton("HealthNotification", function()
 end)
 
 local page = venyx:addPage("SPAMS", 5012544693)
-local section3 = page:addSection("SPAMS MESSAGE ")
+local section3 = page:addSection("SPAMS MESSAGE English")
 --Toxic--
 section3:addButton("Toxic", function()
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL EZ","All")
@@ -1262,6 +1264,15 @@ section3:addButton("Toxic", function()
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ","All")
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ","All")
 end)
+---love --
+section3:addButton("Toxic Team Spectium EZ", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL EZ TEAM SPECTIUM","All")
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL EZ TEAM SPECTIUM EZEZEZEZEZEZEZEZEZEZ TEAM SPECTIUM EZZ","All")
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL EZ TEAM SPECTIUM EZEZEZEZEZEZEZEZ TEAM SPECTIUM EZZ","All")
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ","All")
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ","All")
+end)
+--LOVE
 section3:addButton("love Paragraph", function()
     local args = {
         [1] = "verything you say makes me so ahhh. The way you talk sounds so formal and I really love it. ",
@@ -1431,6 +1442,19 @@ section3:addButton("love Paragraph", function()
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
     print("Clicked")
     end)
+    local section3 = page:addSection("SPAMS Mensajes Spanish ")
+    section3:addButton("RISAA", function()
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL JAJAJA","All")
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("XDXDXDXDXDXD","All")
+        print("Clicked")
+        end)
+
+        --TOXICO ESPAÑOL-
+        section3:addButton("TOXICO ESPAÑOL", function()
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL JAJAJA NO ME GANAS EZZZ","All")
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LLORA JAJAJA EZZZ","All")
+            print("Clicked")
+            end)
     --Extras
     local page = venyx:addPage("Extras", 5012544693)
     local section4 = page:addSection("Extras")
@@ -1570,7 +1594,7 @@ publicItalics = true --if true will use /me to stand out
 privateProperties = { --customize private logs
 	Color = Color3.fromRGB(0,255,255); 
 	Font = Enum.Font.SourceSansBold;
-	TextSize = 18;
+	TextSize = 18; 
 }
 
 
@@ -1718,7 +1742,11 @@ Load(Dex)
                 loadstring(game:HttpGet("https://pastebin.com/raw/4B4fktPS", true))()
                 print("Clicked")
                 end)
-
+--InfinityYield--
+section4:addButton("Infinity Yield", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))() 
+    print("Clicked")
+    end)
                 
             --Barrier----
 --Barrier and undermine
@@ -1839,7 +1867,7 @@ end
 --Credits--
 local page = venyx:addPage("Credits", 5012544693)
 local section5 = page:addSection("Credits:")
-local section5 = page:addSection(" Scripts Made By : EliasWhiteShadow#9022")
+local section5 = page:addSection(" Scripts Made By : EliasSteel")
 
 local section5 = page:addSection("Hi " .. Meh.Name)
 local section5 = page:addSection("More")
@@ -1855,7 +1883,7 @@ section5:addButton("Exit", function()
     _G.toggled         = true
     for i,v in pairs(ct) do v:Disconnect() end
     for i,v in next, game:GetService("CoreGui"):GetDescendants() do
-        if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 3.1" then 
+        if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 4.1" then 
             v:Destroy() 
         end
     end
@@ -1879,14 +1907,12 @@ section5:addButton("ReloadScript", function()
     _G.toggled         = true
 loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/Gamers%20X%20Premium%20V2a.Lua"))()
      for i,v in pairs(ct) do v:Disconnect() end
-     print("ReloadScript Not Working :( I'm Sorry :,v")
-     venyx:Notify("Reload Script Not Working :( i'm Sorry :,v")
 end)
 --Commands-
 game.Players.LocalPlayer.Chatted:connect(function(msg)
     if msg:sub(1, 9) == "/Lag" then
         loadstring(game:HttpGet("https://paste.gg/p/anonymous/d3492bd620bd4c46b54680ac80b0fa0d/files/161ddd9c992c4ceba3c298458d45188a/raw", true))()
-      end
+    end
    end)
    game.Players.LocalPlayer.Chatted:connect(function(msg)
     if msg:sub(1, 9) == "/KIA" then
