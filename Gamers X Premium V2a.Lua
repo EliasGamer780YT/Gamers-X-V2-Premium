@@ -1,3 +1,8 @@
+--GAMERS X PREMIUM-
+--BY EliasShadowXx
+
+
+
 local muter = false
 for i,v in next, game:GetService("CoreGui"):GetDescendants() do
     if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 4.1" then 
@@ -1453,6 +1458,7 @@ section3:addButton("love Paragraph", function()
         section3:addButton("TOXICO ESPAÑOL", function()
             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL JAJAJA NO ME GANAS EZZZ","All")
             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LLORA JAJAJA EZZZ","All")
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL TU MAMA MI PERRITA EZEZEZEZ","All")
             print("Clicked")
             end)
     --Extras
@@ -1513,6 +1519,89 @@ section4:addButton("Anti-AFK", function()
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = priorpos
        print("Clicked")
        end)
+
+        --XD   ---
+  Speed = 0
+  Spin = 0
+  TornadoSpin = 0
+  CircleEffect = 0
+  StartingAngle = 0 -- Not degrees
+  RemoveMesh = false
+  Rotation = 0
+  Flip = true
+  OffsetX = 0
+  OffsetY = 10
+  OffsetZ = 1
+  AntiLag = false
+---Sword In Lobbysection4:addButton("Infinity Yield", function()
+section4:addButton("Circle Sword", function()
+ 
+  local Speed_2 = Speed / math.random(3.875, 4.125)
+  local function backpack()
+      for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+          if v:IsA("Tool") then
+              v.Parent = game.Players.LocalPlayer.Backpack.Sword
+          end
+      end
+  end
+  local function character()
+      for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+          if v:IsA("Tool") then
+              v.Parent = game.Players.LocalPlayer.Character
+          end
+      end
+  end
+  game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Character
+  if Flip then
+      game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip =
+          game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip *
+          CFrame.Angles(math.rad(180), 0, 0)
+      game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip =
+          game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip +
+          Vector3.new(0 + OffsetX / math.pi, 0 + OffsetY / math.pi, 0 + OffsetZ / math.pi)
+  else
+      game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip =
+          game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip *
+          CFrame.Angles(math.rad(0 + Rotation), 0, StartingAngle)
+      game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip =
+          game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip +
+          Vector3.new(0 + OffsetX / math.pi, 0 + OffsetY / math.pi, 0 + OffsetZ / math.pi)
+  end
+  game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Backpack
+  if RemoveMesh then
+      for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+          if v:IsA("Tool") then
+              v.Handle.Mesh:Remove()
+          else
+          end
+      end
+  end
+  repeat
+      for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+          if v:IsA("Tool") then
+              v.Grip = v.Grip * CFrame.Angles(math.rad(Spin * Speed_2), 0 + TornadoSpin, CircleEffect / 16)
+          end
+      end
+      character()
+      game:GetService("RunService").RenderStepped:wait()
+      backpack()
+      if AntiLag then
+          game:GetService("RunService").RenderStepped:wait()
+      else
+      end
+  until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+  print("Clicked")
+  end)
+  --XDD-
+  section4:addButton("No Colide blocks", function()
+    local Why = game:GetService("Players").LocalPlayer
+		local Char = Why.Character
+		local backpack = Why.Backpack
+
+		backpack.Block.Parent = Why.Character
+		Char.Block.Left:Destroy()
+		Char.Block.Parent = Why.Backpack
+end)  
        --FARMWINS--
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
@@ -1582,6 +1671,17 @@ end
     print("bruh")
    end
 end)
+   --Sword Lobby-
+   section4:addKeybind("Sword lobby", Enum.KeyCode.Insert, function()
+    local xpos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.X
+    local ypos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y
+    local zpos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Z
+
+    game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116, 165, 108)
+wait(2)
+    game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(xpos, ypos, zpos)
+end)  
+ 
        local section4 = page:addSection("FE Scripts")
 --Spy Ware-
 section4:addButton("Gamers X Chat Private", function()
@@ -1747,7 +1847,7 @@ section4:addButton("Infinity Yield", function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))() 
     print("Clicked")
     end)
-                
+   
             --Barrier----
 --Barrier and undermine
 local section4 = page:addSection("Barrier & Undermine Block")
@@ -1867,7 +1967,7 @@ end
 --Credits--
 local page = venyx:addPage("Credits", 5012544693)
 local section5 = page:addSection("Credits:")
-local section5 = page:addSection(" Scripts Made By : EliasSteel")
+local section5 = page:addSection(" Scripts Made By : XxEliasShadowXx#6666")
 
 local section5 = page:addSection("Hi " .. Meh.Name)
 local section5 = page:addSection("More")
@@ -1942,7 +2042,10 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
       end
    end)
-
+   --oTRO xd-
+   venyx:Notify("Welcome To Gamers X THANKS FOR USING GAMERS X")
+  
+--XD--
    game.Players:WaitForChild("Jonathan342820")
 venyx:Notify("Elias ta en partida", "Conche Tu Mare Vali D:")
 ---XD-
@@ -1957,4 +2060,1063 @@ game.Players["Jonathan342820"].Chatted:connect(function(msg)
         wait(3)
         game:Shutdown()
     end
+end)
+--TROL-
+function addadmintextbox()
+	local adminsec = main:Tab("Admin")
+	adminsec:Textbox("Use Admin Commands",function(msg)
+
+		if msg == "kick" then
+			game:Shutdown()
+		end
+
+		if msg == "unff" then
+			for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+				if v:IsA("ForceField") then
+					v:Destroy()
+				end
+			end
+		end
+
+		if msg == "ff" then
+			local Why      = game:GetService("Players").LocalPlayer
+			local Char     = Why.Character
+			local backpack = Why.Backpack
+
+			Char.Humanoid:UnequipTools()
+			wait()
+			for i,v in next, backpack:GetDescendants() do
+				if v:IsA("Tool") and v.Name =="Shield" then
+					v.GripPos         = Vector3.new(0,10000,0)
+					v.Handle.Massless = true
+					v.Parent          = Char
+					v:Activate()
+					v.ShieldPotion:Destroy()
+					v:Destroy()
+				end
+			end
+		end
+
+		if msg == "rj" then
+			local ts = game:GetService("TeleportService")
+			local p = game:GetService("Players").LocalPlayer
+			ts:Teleport(game.PlaceId, p)
+		end
+
+		if msg == "slm" then
+			for i,v in pairs(game.CoreGui:GetDescendants()) do
+				if v.Name == "Intro" then
+					v:Destroy()
+				end
+			end
+
+			local Intro = Instance.new("ScreenGui")
+			local Main = Instance.new("Frame")
+			local Title = Instance.new("TextLabel")
+			local UICorner = Instance.new("UICorner")
+			local texts = Instance.new("TextLabel")
+			local Glow = Instance.new("ImageLabel")
+			local UICorner_2 = Instance.new("UICorner")
+			local Flash = Instance.new("Frame")
+			local UICorner_3 = Instance.new("UICorner")
+
+			--Properties:
+
+			Intro.Name = "Intro"
+			Intro.Parent = game.CoreGui
+			Intro.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+			Main.Name = "Main"
+			Main.Parent = Intro
+			Main.Active = true
+			Main.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+			Main.BackgroundTransparency = 1.000
+			Main.Position = UDim2.new(0.740999997, 10, 1, -70)
+			Main.Size = UDim2.new(0, 332, 0, 60)
+			Main.Visible = false
+
+			Title.Name = "Title"
+			Title.Parent = Main
+			Title.BackgroundTransparency = 1.000
+			Title.Position = UDim2.new(0, 10, 0, 8)
+			Title.Size = UDim2.new(1, -40, 0, 16)
+			Title.Font = Enum.Font.GothamSemibold
+			Title.Text = "Cihonax HUB [ Eski HUB :( ]"
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextSize = 14.000
+			Title.TextTransparency = 1.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UICorner.CornerRadius = UDim.new(0, 5)
+			UICorner.Parent = Main
+
+			texts.Name = "texts"
+			texts.Parent = Main
+			texts.BackgroundTransparency = 1.000
+			texts.Position = UDim2.new(0, 10, 1, -24)
+			texts.Size = UDim2.new(1, -40, 0, 16)
+			texts.Font = Enum.Font.Gotham
+			texts.Text = "Slm Aşko Napıyon"
+			texts.TextColor3 = Color3.fromRGB(255, 255, 255)
+			texts.TextSize = 14.000
+			texts.TextTransparency = 1.000
+			texts.TextXAlignment = Enum.TextXAlignment.Left
+
+			Glow.Name = "Glow"
+			Glow.Parent = Main
+			Glow.BackgroundTransparency = 1.000
+			Glow.Position = UDim2.new(0, -15, 0, -15)
+			Glow.Size = UDim2.new(1, 30, 1, 30)
+			Glow.Image = "rbxassetid://5028857084"
+			Glow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+			Glow.ImageTransparency = 1.000
+			Glow.ScaleType = Enum.ScaleType.Slice
+			Glow.SliceCenter = Rect.new(24, 24, 276, 276)
+
+			UICorner_2.CornerRadius = UDim.new(0, 5)
+			UICorner_2.Parent = Glow
+
+			Flash.Name = "Flash"
+			Flash.Parent = Intro
+			Flash.Active = true
+			Flash.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Flash.BorderSizePixel = 0
+			Flash.Position = UDim2.new(0.740999997, 10, 1, -70)
+			Flash.Size = UDim2.new(0, 0, 0, 60)
+			Flash.Visible = false
+
+			UICorner_3.CornerRadius = UDim.new(0, 5)
+			UICorner_3.Parent = Flash
+
+			Main.Visible = true
+			for i = 1,10 do
+				texts.TextTransparency = 1-(i/10)
+				Title.TextTransparency = 1-(i/10)
+				Main.BackgroundTransparency = 1-(i/10)
+				Glow.ImageTransparency = 1-(i/10)
+				wait()
+			end
+			wait(3)
+			for i = 1,10 do
+				texts.TextTransparency = i/10
+				Title.TextTransparency = i/10
+				Main.BackgroundTransparency = i/10
+				Glow.ImageTransparency = i/10
+				wait()
+			end
+
+			for i,v in pairs(game.CoreGui:GetDescendants()) do
+				if v.Name == "Intro" then
+					v:Destroy()
+				end
+			end
+		end
+
+		if msg == "bring" then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.Head.CFrame
+		end
+		
+		if msg == "kill" then
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+		end
+
+		if msg == "skyfu" then
+			loadstring(game:HttpGet("https://gist.githubusercontent.com/SHEESHAhmet/5054306387ba8a84f5cb0181bf06bae6/raw/f07e4d372c36701a22073916f0135e02ff33d777/skyfu", true))()
+		end
+
+		if msg == "fly" then
+			loadstring(game:HttpGet("https://gist.githubusercontent.com/SHEESHAhmet/ed4356568ec92cb30ec2a29fdf50e85f/raw/e4a84511928686ba7e29b2065b1cc488fb9bbc86/FLY", true))()
+		end
+
+		if msg == "31" then
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("31","All")
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("31 çekmek aşşırı havalı dostum!","All")
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("her gün 31 çekmelisin!!!","All")
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Allah yok","All")
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Tekrar 31 Çekiliyor....","All")
+		end
+
+		if msg == "blind" then
+			local blind = Instance.new("BlurEffect" ,game.Lighting)
+			blind.Name = "Blind"
+			blind.Size = 99999999
+		end
+
+
+		if msg == "noclip blocks" then
+			local Why = game:GetService("Players").LocalPlayer
+			local Char = Why.Character
+			local backpack = Why.Backpack
+
+			backpack.Block.Parent = Why.Character
+			Char.Block.Left:Destroy()
+			Char.Block.Parent = Why.Backpack
+		end
+
+
+		if msg == "fling" then
+			local Adrix        = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			wait(0.01)
+			ZZ = game:GetService('RunService').Stepped:connect(function()
+				for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+					if v:IsA("BasePart") then 
+						v.CanCollide = false
+					end
+				end
+			end)
+			local BG = Instance.new('BodyGyro', game:GetService("Players").LocalPlayer.Character.Torso)
+			local BV     = Instance.new('BodyVelocity', game:GetService("Players").LocalPlayer.Character.Torso)
+			BG.P         = 9e4
+			BG.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+			BG.cframe    = game:GetService("Players").LocalPlayer.Character.Torso.CFrame
+			BV.velocity  = Vector3.new(0, 3.75, 0)
+			BV.maxForce  = Vector3.new(9e9, 9e9, 9e9)
+			wait()
+			NoLol = game:GetService('RunService').Heartbeat:connect(function()
+				for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+					if v:IsA("BasePart") and v.Name ~="Torso" then 
+						v.Velocity = Vector3.new(0,-2333333,0)
+					end
+				end
+			end)
+			XD = game:GetService("Players").LocalPlayer
+
+			for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+				if v.Name ~= XD.Name then
+					if v.Character:FindFirstChild('Role') and v.Character:FindFirstChild('Torso') then
+						wait(0.1)
+						XD.Character:FindFirstChild('HumanoidRootPart').CFrame = v.Character:FindFirstChild('HumanoidRootPart').CFrame + Vector3.new(0,-3.9,0)
+						wait(0.1)
+						XD.Character:FindFirstChild('HumanoidRootPart').CFrame = v.Character:FindFirstChild('HumanoidRootPart').CFrame + Vector3.new(0,4,0)
+						wait(0.1)
+					end 
+				end    
+			end
+			wait(0.2)
+			ZZ:Disconnect()
+
+			NoLol:Disconnect()
+			wait(0.1)
+			BG:Destroy()
+			BV:Destroy()
+			game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = Adrix
+			game.Players.LocalPlayer.Character:FindFirstChild('Humanoid').PlatformStand = true
+			wait()
+			game.Players.LocalPlayer.Character:FindFirstChild('Humanoid').PlatformStand = false
+		end
+
+
+		if msg == "unblind" then
+			for i,v in pairs(game.Lighting:GetDescendants()) do
+				if v.Name == "Blind" then
+					v:Destroy()
+				end
+			end
+		end
+	end)
+end
+
+function addadmin(players)
+	for i, v in pairs(game.CoreGui:GetDescendants()) do
+		if v.Name == "Commands" then
+			v:Destroy()
+		end
+	end
+
+	local Commands = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Command = Instance.new("ScrollingFrame")
+	local UICorner_2 = Instance.new("UICorner")
+	local UIListLayout = Instance.new("UIListLayout")
+	local kick = Instance.new("TextLabel")
+	local UICorner_3 = Instance.new("UICorner")
+	local kill = Instance.new("TextLabel")
+	local UICorner_4 = Instance.new("UICorner")
+	local unff = Instance.new("TextLabel")
+	local UICorner_5 = Instance.new("UICorner")
+	local ff = Instance.new("TextLabel")
+	local UICorner_6 = Instance.new("UICorner")
+	local rj = Instance.new("TextLabel")
+	local UICorner_7 = Instance.new("UICorner")
+	local slm = Instance.new("TextLabel")
+	local UICorner_8 = Instance.new("UICorner")
+	local bring = Instance.new("TextLabel")
+	local UICorner_9 = Instance.new("UICorner")
+	local skyfu = Instance.new("TextLabel")
+	local UICorner_10 = Instance.new("UICorner")
+	local fly = Instance.new("TextLabel")
+	local UICorner_11 = Instance.new("UICorner")
+	local giveadmin = Instance.new("TextLabel")
+	local UICorner_12 = Instance.new("UICorner")
+	local blind = Instance.new("TextLabel")
+	local UICorner_13 = Instance.new("UICorner")
+	local noclipblocks = Instance.new("TextLabel")
+	local UICorner_14 = Instance.new("UICorner")
+	local fling = Instance.new("TextLabel")
+	local UICorner_15 = Instance.new("UICorner")
+	local unblind = Instance.new("TextLabel")
+	local UICorner_16 = Instance.new("UICorner")
+	local Glow = Instance.new("ImageLabel")
+	local UICorner_17 = Instance.new("UICorner")
+	local TitleBar = Instance.new("Frame")
+	local UICorner_18 = Instance.new("UICorner")
+	local SearchBar = Instance.new("TextBox")
+	local UICorner_19 = Instance.new("UICorner")
+	local searchicon = Instance.new("ImageLabel")
+	local Glow_2 = Instance.new("ImageLabel")
+	local UICorner_20 = Instance.new("UICorner")
+	local Close = Instance.new("TextButton")
+	local UICorner_21 = Instance.new("UICorner")
+
+	--Properties:
+
+	Commands.Name = "Commands"
+	Commands.Parent = game.CoreGui
+	Commands.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Main.Name = "Main"
+	Main.Parent = Commands
+	Main.Active = true
+	Main.AnchorPoint = Vector2.new(1, 1)
+	Main.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	Main.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	Main.Position = UDim2.new(0.670000017, 0, 5, 0)
+	Main.Size = UDim2.new(0, 462, 0, 333)
+
+	UICorner.CornerRadius = UDim.new(0, 5)
+	UICorner.Parent = Main
+
+	Command.Name = "Command"
+	Command.Parent = Main
+	Command.Active = true
+	Command.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	Command.BackgroundTransparency = 1.000
+	Command.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	Command.Position = UDim2.new(0.019480519, 0, 0.102102101, 0)
+	Command.Size = UDim2.new(0, 444, 0, 290)
+	Command.ScrollBarThickness = 5
+	Command.ScrollBarImageColor3 = Color3.new(0, 0, 0)
+
+	UICorner_2.CornerRadius = UDim.new(0, 5)
+	UICorner_2.Parent = Command
+
+	UIListLayout.Parent = Command
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+	kick.Name = ",kick"
+	kick.Parent = Command
+	kick.Active = true
+	kick.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	kick.BackgroundTransparency = 1.000
+	kick.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	kick.Size = UDim2.new(0, 433, 0, 23)
+	kick.Font = Enum.Font.GothamBold
+	kick.Text = ",kick "
+	kick.TextColor3 = Color3.fromRGB(178, 178, 178)
+	kick.TextSize = 14.000
+	kick.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	kick.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_3.CornerRadius = UDim.new(0, 5)
+	UICorner_3.Parent = kick
+
+	kill.Name = ",kill"
+	kill.Parent = Command
+	kill.Active = true
+	kill.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	kill.BackgroundTransparency = 1.000
+	kill.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	kill.Size = UDim2.new(0, 433, 0, 23)
+	kill.Font = Enum.Font.GothamBold
+	kill.Text = ",kill"
+	kill.TextColor3 = Color3.fromRGB(178, 178, 178)
+	kill.TextSize = 14.000
+	kill.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	kill.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_4.CornerRadius = UDim.new(0, 5)
+	UICorner_4.Parent = kill
+
+	unff.Name = ",unff"
+	unff.Parent = Command
+	unff.Active = true
+	unff.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	unff.BackgroundTransparency = 1.000
+	unff.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	unff.Size = UDim2.new(0, 433, 0, 23)
+	unff.Font = Enum.Font.GothamBold
+	unff.Text = ",unff"
+	unff.TextColor3 = Color3.fromRGB(178, 178, 178)
+	unff.TextSize = 14.000
+	unff.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	unff.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_5.CornerRadius = UDim.new(0, 5)
+	UICorner_5.Parent = unff
+
+	ff.Name = ",ff"
+	ff.Parent = Command
+	ff.Active = true
+	ff.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	ff.BackgroundTransparency = 1.000
+	ff.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	ff.Size = UDim2.new(0, 433, 0, 23)
+	ff.Font = Enum.Font.GothamBold
+	ff.Text = ",ff"
+	ff.TextColor3 = Color3.fromRGB(178, 178, 178)
+	ff.TextSize = 14.000
+	ff.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	ff.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_6.CornerRadius = UDim.new(0, 5)
+	UICorner_6.Parent = ff
+
+	rj.Name = ",rj"
+	rj.Parent = Command
+	rj.Active = true
+	rj.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	rj.BackgroundTransparency = 1.000
+	rj.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	rj.Size = UDim2.new(0, 433, 0, 23)
+	rj.Font = Enum.Font.GothamBold
+	rj.Text = ",rj"
+	rj.TextColor3 = Color3.fromRGB(178, 178, 178)
+	rj.TextSize = 14.000
+	rj.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	rj.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_7.CornerRadius = UDim.new(0, 5)
+	UICorner_7.Parent = rj
+
+	slm.Name = ",slm"
+	slm.Parent = Command
+	slm.Active = true
+	slm.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	slm.BackgroundTransparency = 1.000
+	slm.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	slm.Size = UDim2.new(0, 433, 0, 23)
+	slm.Font = Enum.Font.GothamBold
+	slm.Text = ",slm"
+	slm.TextColor3 = Color3.fromRGB(178, 178, 178)
+	slm.TextSize = 14.000
+	slm.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	slm.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_8.CornerRadius = UDim.new(0, 5)
+	UICorner_8.Parent = slm
+
+	bring.Name = ",bring"
+	bring.Parent = Command
+	bring.Active = true
+	bring.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	bring.BackgroundTransparency = 1.000
+	bring.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	bring.Size = UDim2.new(0, 433, 0, 23)
+	bring.Font = Enum.Font.GothamBold
+	bring.Text = ",bring"
+	bring.TextColor3 = Color3.fromRGB(178, 178, 178)
+	bring.TextSize = 14.000
+	bring.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	bring.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_9.CornerRadius = UDim.new(0, 5)
+	UICorner_9.Parent = bring
+
+	skyfu.Name = ",skyfu"
+	skyfu.Parent = Command
+	skyfu.Active = true
+	skyfu.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	skyfu.BackgroundTransparency = 1.000
+	skyfu.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	skyfu.Size = UDim2.new(0, 433, 0, 23)
+	skyfu.Font = Enum.Font.GothamBold
+	skyfu.Text = ",skyfu"
+	skyfu.TextColor3 = Color3.fromRGB(178, 178, 178)
+	skyfu.TextSize = 14.000
+	skyfu.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	skyfu.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_10.CornerRadius = UDim.new(0, 5)
+	UICorner_10.Parent = skyfu
+
+	fly.Name = ",fly"
+	fly.Parent = Command
+	fly.Active = true
+	fly.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	fly.BackgroundTransparency = 1.000
+	fly.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	fly.Size = UDim2.new(0, 433, 0, 23)
+	fly.Font = Enum.Font.GothamBold
+	fly.Text = ",fly"
+	fly.TextColor3 = Color3.fromRGB(178, 178, 178)
+	fly.TextSize = 14.000
+	fly.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	fly.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_11.CornerRadius = UDim.new(0, 5)
+	UICorner_11.Parent = fly
+
+	giveadmin.Name = ",giveadmin"
+	giveadmin.Parent = Command
+	giveadmin.Active = true
+	giveadmin.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	giveadmin.BackgroundTransparency = 1.000
+	giveadmin.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	giveadmin.Size = UDim2.new(0, 433, 0, 23)
+	giveadmin.Font = Enum.Font.GothamBold
+	giveadmin.Text = ",giveadmin"
+	giveadmin.TextColor3 = Color3.fromRGB(178, 178, 178)
+	giveadmin.TextSize = 14.000
+	giveadmin.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	giveadmin.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_12.CornerRadius = UDim.new(0, 5)
+	UICorner_12.Parent = giveadmin
+
+	blind.Name = ",blind"
+	blind.Parent = Command
+	blind.Active = true
+	blind.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	blind.BackgroundTransparency = 1.000
+	blind.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	blind.Size = UDim2.new(0, 433, 0, 23)
+	blind.Font = Enum.Font.GothamBold
+	blind.Text = ",blind"
+	blind.TextColor3 = Color3.fromRGB(178, 178, 178)
+	blind.TextSize = 14.000
+	blind.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	blind.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_13.CornerRadius = UDim.new(0, 5)
+	UICorner_13.Parent = blind
+
+	noclipblocks.Name = ",noclip blocks"
+	noclipblocks.Parent = Command
+	noclipblocks.Active = true
+	noclipblocks.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	noclipblocks.BackgroundTransparency = 1.000
+	noclipblocks.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	noclipblocks.Size = UDim2.new(0, 433, 0, 23)
+	noclipblocks.Font = Enum.Font.GothamBold
+	noclipblocks.Text = ",noclip blocks"
+	noclipblocks.TextColor3 = Color3.fromRGB(178, 178, 178)
+	noclipblocks.TextSize = 14.000
+	noclipblocks.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	noclipblocks.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_14.CornerRadius = UDim.new(0, 5)
+	UICorner_14.Parent = noclipblocks
+
+	fling.Name = ",fling"
+	fling.Parent = Command
+	fling.Active = true
+	fling.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	fling.BackgroundTransparency = 1.000
+	fling.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	fling.Size = UDim2.new(0, 433, 0, 23)
+	fling.Font = Enum.Font.GothamBold
+	fling.Text = ",fling"
+	fling.TextColor3 = Color3.fromRGB(178, 178, 178)
+	fling.TextSize = 14.000
+	fling.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	fling.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_15.CornerRadius = UDim.new(0, 5)
+	UICorner_15.Parent = fling
+
+	unblind.Name = ",unblind"
+	unblind.Parent = Command
+	unblind.Active = true
+	unblind.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	unblind.BackgroundTransparency = 1.000
+	unblind.BorderColor3 = Color3.fromRGB(24, 24, 24)
+	unblind.Size = UDim2.new(0, 433, 0, 23)
+	unblind.Font = Enum.Font.GothamBold
+	unblind.Text = ",unblind"
+	unblind.TextColor3 = Color3.fromRGB(178, 178, 178)
+	unblind.TextSize = 14.000
+	unblind.TextStrokeColor3 = Color3.fromRGB(178, 178, 178)
+	unblind.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner_16.CornerRadius = UDim.new(0, 5)
+	UICorner_16.Parent = unblind
+
+	Glow.Name = "Glow"
+	Glow.Parent = Main
+	Glow.Active = true
+	Glow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Glow.BackgroundTransparency = 1.000
+	Glow.Position = UDim2.new(0, -15, 0, -15)
+	Glow.Size = UDim2.new(1, 30, 1, 30)
+	Glow.Image = "rbxassetid://5028857084"
+	Glow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	Glow.ScaleType = Enum.ScaleType.Slice
+	Glow.SliceCenter = Rect.new(24, 24, 276, 276)
+
+	UICorner_17.CornerRadius = UDim.new(0, 4)
+	UICorner_17.Parent = Glow
+
+	TitleBar.Name = "TitleBar"
+	TitleBar.Parent = Main
+	TitleBar.Active = true
+	TitleBar.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	TitleBar.BorderColor3 = Color3.fromRGB(28, 28, 28)
+	TitleBar.Size = UDim2.new(0, 461, 0, 30)
+
+	UICorner_18.CornerRadius = UDim.new(0, 5)
+	UICorner_18.Parent = TitleBar
+
+	SearchBar.Name = "SearchBar"
+	SearchBar.Parent = TitleBar
+	SearchBar.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	SearchBar.BorderColor3 = Color3.fromRGB(28, 28, 28)
+	SearchBar.Size = UDim2.new(0, 435, 0, 30)
+	SearchBar.Font = Enum.Font.GothamBold
+	SearchBar.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+	SearchBar.PlaceholderText = "Search Here"
+	SearchBar.Text = ""
+	SearchBar.TextColor3 = Color3.fromRGB(178, 178, 178)
+	SearchBar.TextSize = 14.000
+
+	UICorner_19.CornerRadius = UDim.new(0, 5)
+	UICorner_19.Parent = SearchBar
+
+	searchicon.Name = "searchicon"
+	searchicon.Parent = SearchBar
+	searchicon.Active = true
+	searchicon.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	searchicon.BackgroundTransparency = 1.000
+	searchicon.BorderColor3 = Color3.fromRGB(28, 28, 28)
+	searchicon.Position = UDim2.new(0.019480519, 0, 0.166666672, 0)
+	searchicon.Size = UDim2.new(0, 21, 0, 20)
+	searchicon.Image = "http://www.roblox.com/asset/?id=6236315661"
+	searchicon.ImageColor3 = Color3.fromRGB(178, 178, 178)
+
+	Glow_2.Name = "Glow"
+	Glow_2.Parent = TitleBar
+	Glow_2.Active = true
+	Glow_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Glow_2.BackgroundTransparency = 1.000
+	Glow_2.Position = UDim2.new(0, -15, 0, -15)
+	Glow_2.Size = UDim2.new(1, 30, 1, 30)
+	Glow_2.Image = "rbxassetid://5028857084"
+	Glow_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	Glow_2.ImageTransparency = 0.500
+	Glow_2.ScaleType = Enum.ScaleType.Slice
+	Glow_2.SliceCenter = Rect.new(24, 24, 276, 276)
+
+	UICorner_20.CornerRadius = UDim.new(0, 4)
+	UICorner_20.Parent = Glow_2
+
+	Close.Name = "Close"
+	Close.Parent = TitleBar
+	Close.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	Close.BackgroundTransparency = 1.000
+	Close.BorderColor3 = Color3.fromRGB(28, 28, 28)
+	Close.Position = UDim2.new(0.943727612, 0, 0, 0)
+	Close.Size = UDim2.new(0, 26, 0, 30)
+	Close.Font = Enum.Font.GothamBold
+	Close.Text = "X"
+	Close.TextColor3 = Color3.fromRGB(178, 178, 178)
+	Close.TextSize = 14.000
+	Close.MouseButton1Down:Connect(function()
+		Main:TweenPosition(UDim2.new(0.67, 0,5, 0))
+	end)
+
+	UICorner_21.CornerRadius = UDim.new(0, 5)
+	UICorner_21.Parent = Close
+
+	local searchBar = SearchBar
+	local items = Command
+
+	function UpdateResults()
+		local search = string.lower(searchBar.Text)
+		for i, v in	 pairs(items:GetChildren()) do
+			if v:IsA("TextLabel") then
+				if search ~= "" then
+					local item = string.lower(v.Text)
+					if string.find(item, search) then
+						v.Visible = true
+					else
+						v.Visible = false
+					end
+				else
+					v.Visible = true
+				end
+			end
+		end
+	end
+
+	searchBar.Changed:Connect(UpdateResults)
+	
+	game.Players.LocalPlayer.Chatted:Connect(function(msg)
+		if msg == ",cmds" then
+			Main:TweenPosition(UDim2.new(0.67, 0,0.814, 0))
+		end
+	end)
+	
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",kick" then
+			game:Shutdown()
+		end
+	end)
+	
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",kill" then
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+		end
+	end)
+	
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",unff" then
+			for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+				if v:IsA("ForceField") then
+					v:Destroy()
+				end
+			end
+		end
+	end)
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",ff" then
+			local Why      = game:GetService("Players").LocalPlayer
+			local Char     = Why.Character
+			local backpack = Why.Backpack
+
+			Char.Humanoid:UnequipTools()
+			wait()
+			for i,v in next, backpack:GetDescendants() do
+				if v:IsA("Tool") and v.Name =="Shield" then
+					v.GripPos         = Vector3.new(0,10000,0)
+					v.Handle.Massless = true
+					v.Parent          = Char
+					v:Activate()
+					v.ShieldPotion:Destroy()
+					v:Destroy()
+				end
+			end
+		end
+	end)
+
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",rj" then
+			local ts = game:GetService("TeleportService")
+			local p = game:GetService("Players").LocalPlayer
+			ts:Teleport(game.PlaceId, p)
+		end
+	end)
+
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",slm" then
+			for i,v in pairs(game.CoreGui:GetDescendants()) do
+				if v.Name == "Intro" then
+					v:Destroy()
+				end
+			end
+
+			local Intro = Instance.new("ScreenGui")
+			local Main = Instance.new("Frame")
+			local Title = Instance.new("TextLabel")
+			local UICorner = Instance.new("UICorner")
+			local texts = Instance.new("TextLabel")
+			local Glow = Instance.new("ImageLabel")
+			local UICorner_2 = Instance.new("UICorner")
+			local Flash = Instance.new("Frame")
+			local UICorner_3 = Instance.new("UICorner")
+
+			--Properties:
+
+			Intro.Name = "Intro"
+			Intro.Parent = game.CoreGui
+			Intro.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+			Main.Name = "Main"
+			Main.Parent = Intro
+			Main.Active = true
+			Main.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+			Main.BackgroundTransparency = 1.000
+			Main.Position = UDim2.new(0.740999997, 10, 1, -70)
+			Main.Size = UDim2.new(0, 332, 0, 60)
+			Main.Visible = false
+
+			Title.Name = "Title"
+			Title.Parent = Main
+			Title.BackgroundTransparency = 1.000
+			Title.Position = UDim2.new(0, 10, 0, 8)
+			Title.Size = UDim2.new(1, -40, 0, 16)
+			Title.Font = Enum.Font.GothamSemibold
+			Title.Text = "Cihonax HUB [ Eski HUB :( ]"
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextSize = 14.000
+			Title.TextTransparency = 1.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UICorner.CornerRadius = UDim.new(0, 5)
+			UICorner.Parent = Main
+
+			texts.Name = "texts"
+			texts.Parent = Main
+			texts.BackgroundTransparency = 1.000
+			texts.Position = UDim2.new(0, 10, 1, -24)
+			texts.Size = UDim2.new(1, -40, 0, 16)
+			texts.Font = Enum.Font.Gotham
+			texts.Text = "Slm Aşko Napıyon"
+			texts.TextColor3 = Color3.fromRGB(255, 255, 255)
+			texts.TextSize = 14.000
+			texts.TextTransparency = 1.000
+			texts.TextXAlignment = Enum.TextXAlignment.Left
+
+			Glow.Name = "Glow"
+			Glow.Parent = Main
+			Glow.BackgroundTransparency = 1.000
+			Glow.Position = UDim2.new(0, -15, 0, -15)
+			Glow.Size = UDim2.new(1, 30, 1, 30)
+			Glow.Image = "rbxassetid://5028857084"
+			Glow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+			Glow.ImageTransparency = 1.000
+			Glow.ScaleType = Enum.ScaleType.Slice
+			Glow.SliceCenter = Rect.new(24, 24, 276, 276)
+
+			UICorner_2.CornerRadius = UDim.new(0, 5)
+			UICorner_2.Parent = Glow
+
+			Flash.Name = "Flash"
+			Flash.Parent = Intro
+			Flash.Active = true
+			Flash.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Flash.BorderSizePixel = 0
+			Flash.Position = UDim2.new(0.740999997, 10, 1, -70)
+			Flash.Size = UDim2.new(0, 0, 0, 60)
+			Flash.Visible = false
+
+			UICorner_3.CornerRadius = UDim.new(0, 5)
+			UICorner_3.Parent = Flash
+
+			Main.Visible = true
+			for i = 1,10 do
+				texts.TextTransparency = 1-(i/10)
+				Title.TextTransparency = 1-(i/10)
+				Main.BackgroundTransparency = 1-(i/10)
+				Glow.ImageTransparency = 1-(i/10)
+				wait()
+			end
+			wait(3)
+			for i = 1,10 do
+				texts.TextTransparency = i/10
+				Title.TextTransparency = i/10
+				Main.BackgroundTransparency = i/10
+				Glow.ImageTransparency = i/10
+				wait()
+			end
+
+			for i,v in pairs(game.CoreGui:GetDescendants()) do
+				if v.Name == "Intro" then
+					v:Destroy()
+				end
+			end
+		end
+	end)
+
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",bring" then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[players].Character.Head.CFrame
+		end
+	end)
+
+	game.Players[players].Chatted:connect(function(msg)
+		if msg == ",skyfu" then
+			loadstring(game:HttpGet("https://gist.githubusercontent.com/SHEESHAhmet/5054306387ba8a84f5cb0181bf06bae6/raw/f07e4d372c36701a22073916f0135e02ff33d777/skyfu", true))()
+		end
+	end)
+
+	game.Players[players].Chatted:connect(function(msg)
+		if msg == ",fly" then
+			loadstring(game:HttpGet("https://gist.githubusercontent.com/SHEESHAhmet/ed4356568ec92cb30ec2a29fdf50e85f/raw/e4a84511928686ba7e29b2065b1cc488fb9bbc86/FLY", true))()
+		end
+	end)
+
+	game.Players[players].Chatted:connect(function(msg)
+		if msg == ",giveadmin" then
+		addadmintextbox()
+		end
+	end)
+
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",blind" then
+			local blind = Instance.new("BlurEffect" ,game.Lighting)
+			blind.Name = "Blind"
+			blind.Size = 99999999
+		end
+	end)
+
+
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",noclip blocks" then
+			local Why = game:GetService("Players").LocalPlayer
+			local Char = Why.Character
+			local backpack = Why.Backpack
+
+			backpack.Block.Parent = Why.Character
+			Char.Block.Left:Destroy()
+			Char.Block.Parent = Why.Backpack
+		end
+	end)
+
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",fling" then
+			local Adrix        = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			wait(0.01)
+			ZZ = game:GetService('RunService').Stepped:connect(function()
+				for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+					if v:IsA("BasePart") then 
+						v.CanCollide = false
+					end
+				end
+			end)
+			local BG = Instance.new('BodyGyro', game:GetService("Players").LocalPlayer.Character.Torso)
+			local BV     = Instance.new('BodyVelocity', game:GetService("Players").LocalPlayer.Character.Torso)
+			BG.P         = 9e4
+			BG.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+			BG.cframe    = game:GetService("Players").LocalPlayer.Character.Torso.CFrame
+			BV.velocity  = Vector3.new(0, 3.75, 0)
+			BV.maxForce  = Vector3.new(9e9, 9e9, 9e9)
+			wait()
+			NoLol = game:GetService('RunService').Heartbeat:connect(function()
+				for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+					if v:IsA("BasePart") and v.Name ~="Torso" then 
+						v.Velocity = Vector3.new(0,-2333333,0)
+					end
+				end
+			end)
+			XD = game:GetService("Players").LocalPlayer
+
+			for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+				if v.Name ~= XD.Name then
+					if v.Character:FindFirstChild('Role') and v.Character:FindFirstChild('Torso') then
+						wait(0.1)
+						XD.Character:FindFirstChild('HumanoidRootPart').CFrame = v.Character:FindFirstChild('HumanoidRootPart').CFrame + Vector3.new(0,-3.9,0)
+						wait(0.1)
+						XD.Character:FindFirstChild('HumanoidRootPart').CFrame = v.Character:FindFirstChild('HumanoidRootPart').CFrame + Vector3.new(0,4,0)
+						wait(0.1)
+					end 
+				end    
+			end
+			wait(0.2)
+			ZZ:Disconnect()
+
+			NoLol:Disconnect()
+			wait(0.1)
+			BG:Destroy()
+			BV:Destroy()
+			game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = Adrix
+			game.Players.LocalPlayer.Character:FindFirstChild('Humanoid').PlatformStand = true
+			wait()
+			game.Players.LocalPlayer.Character:FindFirstChild('Humanoid').PlatformStand = false
+		end
+	end)
+
+	game.Players[players].Chatted:Connect(function(msg)
+		if msg == ",unblind" then
+			for i,v in pairs(game.Lighting:GetDescendants()) do
+				if v.Name == "Blind" then
+					v:Destroy()
+				end
+			end
+		end
+	end)
+	
+	
+end
+
+
+game.Players.PlayerAdded:Connect(function(newplayer)
+	if newplayer.Name == "XBatuXCeliqli" then
+		Library:Load("Admin Connected To Your Game!","XBatuXCeliqli",function()
+			print("XBatuXCeliqli")
+		end)
+		addadmin("XBatuXCeliqli")
+	elseif newplayer.Name == "yenilmez_xxgg" then
+		Library:Load("Admin Connected To Your Game!","yenilmez_xxgg",function()
+			print("yenilmez_xxgg")
+		end)
+		addadmin("yenilmez_xxgg")
+	elseif newplayer.Name == "skyloose" then
+		Library:Load("Admin Connected To Your Game!","skyloose",function()
+			print("skyloose")
+		end)	
+		addadmin("skyloose")
+	elseif newplayer.Name == "calloofduy" then
+		Library:Load("Admin Connected To Your Game!","calloofduy",function()
+			print("calloofduy")
+		end)
+		addadmin("calloofduy")
+	elseif newplayer.Name == "xAnrimis" then		
+		Library:Load("Admin Connected To Your Game!","xAnrimis",function()
+			print("xAnrimis")
+		end)	
+		addadmin("xAnrimis")
+	elseif newplayer.Name == "Egexlia" then		
+		Library:Load("Admin Connected To Your Game!","Egexlia",function()
+			print("Egexlia")
+		end)	
+		addadmin("Egexlia")
+	end
+end)
+
+
+local yen =  game.Players:FindFirstChild("yenilmez_xxgg")
+local batu =  game.Players:FindFirstChild("XBatuXCeliqli")
+local xques =  game.Players:FindFirstChild("calloofduy")
+local ismet =  game.Players:FindFirstChild("xAnrimis")
+local egexlia =  game.Players:FindFirstChild("Egexlia")
+local skylos = game.Players:FindFirstChild("skyloose")
+
+addadmin(plr.Name)
+	Library:Load("Admin Detected!",plr.Name,function()
+		print("yen")
+	end)
+
+if batu then
+	addadmin("XBatuXCeliqli")
+	Library:Load("Batu Baba En Pro!","XBatuXCeliqli",function()
+		print("batuu")
+	end)
+end
+
+if xques then
+	addadmin("calloofduy")
+	Library:Load("31 Detected!","calloofduy",function()
+		print("xquest")
+	end)
+end
+
+if ismet then
+	addadmin("xAnrimis")
+	Library:Load("Kürt Detected!","xAnrimis",function()
+		print("ismey")
+	end)
+end
+
+if egexlia then
+	addadmin("Egexlia")
+	Library:Load("Allah Detected!","Egexlia",function()
+		print("ege")
+	end)
+end
+
+if skylos then
+	addadmin("skyloose")
+	Library:Load("Admin Detected!","skyloose",function()
+		print("skyloose")
+	end)
+end
+
+
+
+if not plr.Character then plr.CharacterAdded:Wait() end
+
+
+
+Library:Load("Ur Admin! :skull:", "Type ,cmds to chat",function()
+	print("lol")
 end)
