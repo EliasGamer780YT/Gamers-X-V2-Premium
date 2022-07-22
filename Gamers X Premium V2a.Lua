@@ -5,7 +5,7 @@
 
 local muter = false
 for i,v in next, game:GetService("CoreGui"):GetDescendants() do
-    if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 4.1" then 
+    if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 5.1" then 
         v:Destroy()
     end
 end
@@ -16,7 +16,7 @@ local Meh = game.Players.LocalPlayer
 
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx   = library.new("Gamers X Premium V 4.1", 5013109572)
+local venyx   = library.new("Gamers X Premium V 5.1", 5013109572)
 
 -- themes
 local themes = {
@@ -28,7 +28,7 @@ local themes = {
     TextColor = Color3.fromRGB(0, 0, 0)
 }
 
-local Skyy = game:GetService("CoreGui")["Gamers X Premium V 4.1"]
+local Skyy = game:GetService("CoreGui")["Gamers X Premium V 5.1"]
 
 Skyy.Main.Glow.ImageColor3 = Color3.fromRGB(255, 14, 14)
 -- first page
@@ -1520,6 +1520,8 @@ section4:addButton("Anti-AFK", function()
        print("Clicked")
        end)
 
+    
+     
         --XD   ---
   Speed = 0
   Spin = 0
@@ -1638,7 +1640,7 @@ section4:addToggle("AutoFarm", nil, function(value)
     _G.toggled = value
    if value == true then
     while _G.toggled == true do 
-        wait(0.5)
+        wait(0.1)
     if GetClosest() == nil then
         for i, v in pairs(game:GetService("Workspace").GameStorage.Coins:GetChildren()) do
             wait(0.1)
@@ -1676,7 +1678,7 @@ end)
     local xpos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.X
     local ypos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y
     local zpos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Z
-
+    
     game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116, 165, 108)
 wait(2)
     game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(xpos, ypos, zpos)
@@ -1749,98 +1751,13 @@ chatFrame.ChatChannelParentFrame.Visible = true
 chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
         print("Clicked")
         end)
-
+  --Dex--
+  section4:addButton("SPIDER FE TROLL", function()
+    loadstring(game:HttpGet(('https://github.com/EliasGamer780YT/Gamers-X-V2-Premium/raw/main/SpiderFeTroll.Lua'),true))() 
+       end)
         --Dex--
-        section4:addButton("DEX V2", function()
-          --credits to infinite yield fe creators
---it may take a while to load plz be patient if the game isn't small
--- btw the comment "sirhurt is retarded" isn't made by me, check the source here ok https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source
-
-function randomString()
-	local length = math.random(10,20)
-	local array = {}
-	for i = 1, length do
-		array[i] = string.char(math.random(32, 126))
-	end
-	return table.concat(array)
-end
-
-PARENT = nil
-if (not is_sirhurt_closure) and (syn and syn.protect_gui) then --sirhurt is retarded
-	local Main = Instance.new("ScreenGui")
-	Main.Name = randomString()
-	syn.protect_gui(Main)
-	Main.Parent = game:GetService("CoreGui")
-	PARENT = Main
-elseif PROTOSMASHER_LOADED and get_hidden_gui then
-	local Main = Instance.new("ScreenGui")
-	Main.Name = randomString()
-	Main.Parent = get_hidden_gui()
-	PARENT = Main
---elseif elysianexecute and gethui then
---	local Main = Instance.new("ScreenGui")
---	Main.Name = randomString()
---	Main.Parent = gethui()
---	PARENT = Main
-elseif game:GetService("CoreGui"):FindFirstChild('RobloxGui') then
-	PARENT = game:GetService("CoreGui").RobloxGui
-else
-	local Main = Instance.new("ScreenGui")
-	Main.Name = randomString()
-	Main.Parent = game:GetService("CoreGui")
-	PARENT = Main
-end
-
-if PARENT:FindFirstChild'Dex' then
-	PARENT.Dex:Destroy();
-end
-
-local Dex = game:GetObjects("rbxassetid://3567096419")[1]
-Dex.Name = 'Dex'
-Dex.Parent = PARENT
-	
-local function Load(Obj)
-	local function GiveOwnGlobals(Func, Script)
-		local Fenv = {}
-		local RealFenv = {script = Script}
-		local FenvMt = {}
-		FenvMt.__index = function(a,b)
-			if RealFenv[b] == nil then
-				return getfenv()[b]
-			else
-				return RealFenv[b]
-			end
-		end
-		FenvMt.__newindex = function(a, b, c)
-			if RealFenv[b] == nil then
-				getfenv()[b] = c
-			else
-				RealFenv[b] = c
-			end
-		end
-		setmetatable(Fenv, FenvMt)
-		setfenv(Func, Fenv)
-		return Func
-	end
-	local function LoadScripts(Script)
-		if Script.ClassName == "Script" or Script.ClassName == "LocalScript" then
-			spawn(function()
-				GiveOwnGlobals(loadstring(Script.Source, "=" .. Script:GetFullName()), Script)()
-			end)
-		end
-	    for i,v in pairs(Script:GetChildren()) do
-			LoadScripts(v)
-		end
-	end
-	LoadScripts(Obj)
-end
-	
-Load(Dex)
-            print("Clicked")
-            end)
-            section4:addButton("FE HATS", function()
-                loadstring(game:HttpGet("https://pastebin.com/raw/4B4fktPS", true))()
-                print("Clicked")
+        section4:addButton("DEX V3 (WORKING)", function()
+            loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
                 end)
 --InfinityYield--
 section4:addButton("Infinity Yield", function()
@@ -1983,7 +1900,7 @@ section5:addButton("Exit", function()
     _G.toggled         = true
     for i,v in pairs(ct) do v:Disconnect() end
     for i,v in next, game:GetService("CoreGui"):GetDescendants() do
-        if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 4.1" then 
+        if v:IsA("ScreenGui") and v.Name =="Gamers X Premium V 5.1" then 
             v:Destroy() 
         end
     end
@@ -2778,7 +2695,7 @@ function addadmin(players)
 		end
 	end)
 	game.Players[players].Chatted:Connect(function(msg)
-		if msg == ",ff" then
+		if msg == "/ff" then
 			local Why      = game:GetService("Players").LocalPlayer
 			local Char     = Why.Character
 			local backpack = Why.Backpack
@@ -2799,7 +2716,7 @@ function addadmin(players)
 	end)
 
 	game.Players[players].Chatted:Connect(function(msg)
-		if msg == ",rj" then
+		if msg == "/rj" then
 			local ts = game:GetService("TeleportService")
 			local p = game:GetService("Players").LocalPlayer
 			ts:Teleport(game.PlaceId, p)
