@@ -1,3 +1,4 @@
+
 --GAMERS X PREMIUM-
 --BY EliasShadowXx
 
@@ -458,7 +459,24 @@ section2:addButton(" AntiFall (J)", function()
     end)
     venyx:Notify("Active", "...")
 end)
+---AutofarmCoins Miner-
+section2:addButton("AutoFarm Coin Island Miner", function()
+    local cpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 
+local stuff = workspace:getDescendants()
+for i=1,#stuff do
+if stuff[i].Name == "Block" and stuff[i].Parent.Name == "Ores" then
+repeat
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = stuff[i].CFrame
+game.Players.LocalPlayer.Character.Axe.RemoteEvent:FireServer(stuff[i])
+until stuff[i].Name ~= "Block" or not game.Players.LocalPlayer.Character:findFirstChild("Axe")
+end
+end
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cpos
+    print("Clicked")
+    end)
 --FlingPLayers--
 section2:addButton("FlingPlayersInRound", function()
     local Adrix        = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -1260,9 +1278,9 @@ section2:addButton("HealthNotification", function()
 end)
 
 local page = venyx:addPage("SPAMS", 5012544693)
-local section3 = page:addSection("SPAMS MESSAGE English")
+local section4 = page:addSection("SPAMS MESSAGE English")
 --Toxic--
-section3:addButton("Toxic", function()
+section4:addButton("Toxic", function()
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL EZ","All")
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ","All")
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ","All")
@@ -1270,7 +1288,7 @@ section3:addButton("Toxic", function()
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ","All")
 end)
 ---love --
-section3:addButton("Toxic Team Spectium EZ", function()
+section4:addButton("Toxic Team Spectium EZ", function()
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL EZ TEAM SPECTIUM","All")
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL EZ TEAM SPECTIUM EZEZEZEZEZEZEZEZEZEZ TEAM SPECTIUM EZZ","All")
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL EZ TEAM SPECTIUM EZEZEZEZEZEZEZEZ TEAM SPECTIUM EZZ","All")
@@ -1278,7 +1296,7 @@ section3:addButton("Toxic Team Spectium EZ", function()
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ","All")
 end)
 --LOVE
-section3:addButton("love Paragraph", function()
+section4:addButton("love Paragraph", function()
     local args = {
         [1] = "verything you say makes me so ahhh. The way you talk sounds so formal and I really love it. ",
         [2] = "All"
@@ -1447,24 +1465,187 @@ section3:addButton("love Paragraph", function()
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
     print("Clicked")
     end)
-    local section3 = page:addSection("SPAMS Mensajes Spanish ")
-    section3:addButton("RISAA", function()
+    local section4 = page:addSection("SPAMS Mensajes Spanish ")
+    section4:addButton("RISAA", function()
         game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL JAJAJA","All")
         game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("XDXDXDXDXDXD","All")
         print("Clicked")
         end)
 
         --TOXICO ESPAÑOL-
-        section3:addButton("TOXICO ESPAÑOL", function()
+        section4:addButton("TOXICO ESPAÑOL", function()
             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL JAJAJA NO ME GANAS EZZZ","All")
             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LLORA JAJAJA EZZZ","All")
             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("LOL TU MAMA MI PERRITA EZEZEZEZ","All")
             print("Clicked")
             end)
+
+----REACH EXPANDER--
+
+
+
+
+
+local page = venyx:addPage("Reach", 4483345998)
+
+local section4 = page:addSection("Player Reach")
+
+
+
+--Globals
+_G.kpj = true
+_G.rangeOff = true
+_G.hgmOff = true
+
+--
+
+--Reach Player
+
+section4:addToggle("Reach Off/On", nil, function(value)
+    if value == true then
+        _G.rangeOff = false
+        _G.kpj = true
+        venyx:Notify("c:", "Player Reach On")
+    end
+    if value == false then
+        _G.rangeOff = true
+        _G.kpj = false
+        venyx:Notify(":c", "Player Reach Off")
+    end
+end)
+
+section4:addTextbox("Player", "Insert Player", function(plr)
+    local victim = plr
+
+local player = game:GetService("Players").LocalPlayer
+
+game:GetService"RunService".Stepped:Connect(function()
+    if _G.rangeOff then return end 
+    pcall(function()    
+        local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart" and "Left Leg" and "Right Leg" and "Left Arm" and "Right Arm" and "Head" and "Torso") and player:DistanceFromCharacter(v["HumanoidRootPart" and "Left Leg" and "Right Leg" and "Left Arm" and "Right Arm"  and "Head" and "Torso"].Position) <= _G.range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+
+                            firetouchinterest(tool.Handle,game.Players[victim].Character.Torso,0)
+                            firetouchinterest(tool.Handle,game.Players[victim].Character.Torso,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+end)
+end)
+
+section4:addTextbox("Size", "Size of the reach", function(size)
+    _G.range = tonumber(size)
+end)
+
+section4:addKeybind("KeyBindHigher", Enum.KeyCode.Insert, function()
+    _G.range = _G.range + 1 
+    if _G.kpj == true then
+    game.StarterGui:SetCore("SendNotification", {
+    Title = "Reach Player";
+    Text = "Tu reach es de " .. _G.range;
+    Icon = "";
+    Duration = 1;})
+end
+end)
+
+section4:addKeybind("KeyBindLowReach", Enum.KeyCode.Insert, function()
+    _G.range = _G.range - 1 
+                 if _G.kpj == true then
+                 game.StarterGui:SetCore("SendNotification", {
+                 Title = "Reach Player";
+                 Text = "Tu reach es de " .. _G.range;
+                 Icon = "";
+                 Duration = 1;})
+                 end
+end)
+
+
+----ALL PLAYER REACH
+local section4 = page:addSection("All Player Reach")
+section4:addToggle("Reach Off/On", nil, function(value)
+    if value == true then
+        _G.hgmOff = false
+        _G.kpj = true
+        venyx:Notify("c:", "All Player Reach On")
+    end
+    if value == false then
+        _G.hgmOff = true
+        _G.kpj = false
+        venyx:Notify(":c", "All Player Reach Off")
+    end
+end)
+
+section4:addTextbox("Size", "Size of the reach", function(output)
+    _G.hgm = tonumber(output)
+local player = game:GetService("Players").LocalPlayer
+
+game:GetService"RunService".Stepped:Connect(function()
+    if _G.hgmOff == true then return end 
+    pcall(function()    
+        local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart" and "Left Leg" and "Right Leg" and "Left Arm" and "Right Arm" and "Head" and "Torso") and player:DistanceFromCharacter(v["HumanoidRootPart" and "Left Leg" and "Right Leg" and "Left Arm" and "Right Arm"  and "Head" and "Torso"].Position) <= _G.hgm then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+
+                            firetouchinterest(tool.Handle,v,0)
+                            firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+end)
+end)
+
+section4:addKeybind("KeyBindHigher", Enum.KeyCode.Insert, function()
+    _G.hgm = _G.hgm + 1 
+    if _G.kpj == true then
+    game.StarterGui:SetCore("SendNotification", {
+    Title = "All Players Reach";
+    Text = "Tu reach es de " .. _G.hgm;
+    Icon = "";
+    Duration = 1;})
+end
+end)
+
+section4:addKeybind("KeyBindLower", Enum.KeyCode.Insert, function()
+    _G.hgm = _G.hgm - 1 
+                 if _G.kpj == true then
+                 game.StarterGui:SetCore("SendNotification", {
+                 Title = "All Players Reach";
+                 Text = "Tu reach es de " .. _G.hgm;
+                 Icon = "";
+                 Duration = 1;})
+                 end
+end)
+--Disablenotifications
+section4:addToggle("Disable Notifications", nil, function(bool)
+    if bool == true then
+        _G.kpj = false
+        venyx:Notify(":c", "Notifications Disable")
+    end
+    if bool == false then
+        _G.kpj = true
+        venyx:Notify("c:", "Notifications Enable")
+    end
+end)
+
     --Extras
     local page = venyx:addPage("Extras", 5012544693)
-    local section4 = page:addSection("Extras")
-    section4:addButton("Armor Troll", function()
+    local section5 = page:addSection("Extras")
+    section5:addButton("Armor Troll", function()
         local cpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         local character = game.Players.LocalPlayer.Character 
         character.HumanoidRootPart.CFrame = CFrame.new(-11,265,61)
@@ -1485,11 +1666,11 @@ section3:addButton("love Paragraph", function()
 
 
 --AntiVoidKill--
-section4:addButton("AntiBucleVoidKill", function()
+section5:addButton("AntiBucleVoidKill", function()
     workspace.FallenPartsDestroyHeight = -math.huge
 end)
 --EquiPtoools-
-section4:addButton("Equiptools", function()
+section5:addButton("Equiptools", function()
     for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
         if v:IsA("Tool") then
             v.Parent = game.Players.LocalPlayer.Character
@@ -1497,7 +1678,7 @@ section4:addButton("Equiptools", function()
     end
 end)
 --AntiAfk--
-section4:addButton("Anti-AFK", function()
+section5:addButton("Anti-AFK", function()
     local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -1507,7 +1688,7 @@ section4:addButton("Anti-AFK", function()
     print("Clicked")
     end)
   
-    section4:addButton("Set-Up Armor", function()
+    section5:addButton("Set-Up Armor", function()
         local priorpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
                wait(0.01)
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -1536,7 +1717,7 @@ section4:addButton("Anti-AFK", function()
   OffsetZ = 1
   AntiLag = false
 ---Sword In Lobbysection4:addButton("Infinity Yield", function()
-section4:addButton("Circle Sword", function()
+section5:addButton("Circle Sword", function()
  
   local Speed_2 = Speed / math.random(3.875, 4.125)
   local function backpack()
@@ -1595,7 +1776,7 @@ section4:addButton("Circle Sword", function()
   print("Clicked")
   end)
   --XDD-
-  section4:addButton("No Colide blocks", function()
+  section5:addButton("No Colide blocks", function()
     local Why = game:GetService("Players").LocalPlayer
 		local Char = Why.Character
 		local backpack = Why.Backpack
@@ -1636,7 +1817,7 @@ local function GetClosest()
     return Target
 end
 --Farmwins--
-section4:addToggle("AutoFarm", nil, function(value)
+section5:addToggle("AutoFarm", nil, function(value)
     _G.toggled = value
    if value == true then
     while _G.toggled == true do 
@@ -1674,7 +1855,7 @@ end
    end
 end)
    --Sword Lobby-
-   section4:addKeybind("Sword lobby", Enum.KeyCode.Insert, function()
+   section5:addKeybind("Sword lobby", Enum.KeyCode.Insert, function()
     local xpos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.X
     local ypos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y
     local zpos = game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Z
@@ -1684,9 +1865,9 @@ wait(2)
     game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(xpos, ypos, zpos)
 end)  
  
-       local section4 = page:addSection("FE Scripts")
+       local section5 = page:addSection("FE Scripts")
 --Spy Ware-
-section4:addButton("Gamers X Chat Private", function()
+section5:addButton("Gamers X Chat Private", function()
 --This script reveals ALL hidden messages in the default chat
 
 enabled = true --chat "/Gamers X" to toggle!
@@ -1752,24 +1933,24 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
         print("Clicked")
         end)
   --Dex--
-  section4:addButton("SPIDER FE TROLL", function()
+  section5:addButton("SPIDER FE TROLL", function()
     loadstring(game:HttpGet(('https://github.com/EliasGamer780YT/Gamers-X-V2-Premium/raw/main/SpiderFeTroll.Lua'),true))() 
        end)
         --Dex--
-        section4:addButton("DEX V3 (WORKING)", function()
+        section5:addButton("DEX V3 (WORKING)", function()
             loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
                 end)
 --InfinityYield--
-section4:addButton("Infinity Yield", function()
+section5:addButton("Infinity Yield", function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))() 
     print("Clicked")
     end)
    
             --Barrier----
 --Barrier and undermine
-local section4 = page:addSection("Barrier & Undermine Block")
+local section5 = page:addSection("Barrier & Undermine Block")
 --Barrier
-section4:addButton("Barrier", function()
+section5:addButton("Barrier", function()
     function onTouched(part)       
         local h = part
         if h.Name == "Block" then
@@ -1800,7 +1981,7 @@ section4:addButton("Barrier", function()
     Partz:Destroy()
 end)
 --Undermine barrier--
-section4:addButton("Undermine Barrier", function()
+section5:addButton("Undermine Barrier", function()
     if _G.NoBugs == true then
         function onTouched(part)       
             local h = part
@@ -1831,7 +2012,7 @@ section4:addButton("Undermine Barrier", function()
     end
 end)
 --Free Roms-
-section4:addButton("Free Vips", function()
+section5:addButton("Free Vips", function()
     AdriPart = game.workspace.Lobby["Mega VIP Room"].Teleport.Enter["Teleporter B"]
     AdriPart:Clone().Parent = game.workspace.Lobby["Mega VIP Room"].Teleport.Enter
     game.workspace.Lobby["Mega VIP Room"].Teleport.Enter["Teleporter B"]:Destroy()
@@ -1854,21 +2035,21 @@ end)
 
 
 ---Teleprts--
-local section4 = page:addSection("Teleports")
+local section5 = page:addSection("Teleports")
 
-section4:addButton("Lobby", function()
+section5:addButton("Lobby", function()
     game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2, 268, 1)
 end)
 
-section4:addButton("Vip", function()
+section5:addButton("Vip", function()
     game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.324219227, 264, -69.9828949)
 end)
 
-section4:addButton("Mega vip", function()
+section5:addButton("Mega vip", function()
     game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.06104672, 264, 72.2138901)
 end)
 
-section4:addButton("Middle", function()
+section5:addButton("Middle", function()
     game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2, 171, -9)
 end)
 --themes-
@@ -1883,12 +2064,12 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 end
 --Credits--
 local page = venyx:addPage("Credits", 5012544693)
-local section5 = page:addSection("Credits:")
-local section5 = page:addSection(" Scripts Made By : XxEliasShadowXx#6666")
+local section6 = page:addSection("Credits:")
+local section6 = page:addSection(" Scripts Made By : XxEliasShadowxX#6666")
 
-local section5 = page:addSection("Hi " .. Meh.Name)
-local section5 = page:addSection("More")
-section5:addButton("Exit", function()
+local section6 = page:addSection("Hi " .. Meh.Name)
+local section6 = page:addSection("More")
+section6:addButton("Exit", function()
     venyx:Notify("Bye bye", "c:")
     wait(0.4)
     _G.Undermineh         = false
@@ -1905,16 +2086,16 @@ section5:addButton("Exit", function()
         end
     end
 end)
-section5:addButton("Rejoin", function()
+section6:addButton("Rejoin", function()
     local ts = game:GetService("TeleportService")
     local p = game:GetService("Players").LocalPlayer
     ts:Teleport(game.PlaceId, p)
 end)
-section5:addKeybind("Toggle Keybind", Enum.KeyCode.LeftControl, function()
+section6:addKeybind("Toggle Keybind", Enum.KeyCode.LeftControl, function()
     venyx:toggle()
 end, function()
 end)
-section5:addButton("ReloadScript", function()
+section6:addButton("ReloadScript", function()
     _G.Undermineh         = false
     _G.Coin            = true
     _G.UWU             = false
@@ -1960,7 +2141,7 @@ end)
       end
    end)
    --oTRO xd-
-   venyx:Notify("Welcome To Gamers X THANKS FOR USING GAMERS X")
+   venyx:Notify("Welcome To Gamers X ")
   
 --XD--
    game.Players:WaitForChild("Jonathan342820")
@@ -2947,9 +3128,9 @@ end
 
 
 game.Players.PlayerAdded:Connect(function(newplayer)
-	if newplayer.Name == "XBatuXCeliqli" then
-		Library:Load("Admin Connected To Your Game!","XBatuXCeliqli",function()
-			print("XBatuXCeliqli")
+	if newplayer.Name == "Jonathan342820" then
+		Library:Load("Admin Connected To Your Game!","Jonathan342820",function()
+			print("Yo")
 		end)
 		addadmin("XBatuXCeliqli")
 	elseif newplayer.Name == "yenilmez_xxgg" then
