@@ -2103,7 +2103,7 @@ section6:addButton("ReloadScript", function()
     _G.SphereActivated = false 
     _G.Dist            = 0
     _G.toggled         = true
-loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/Gamers%20X%20Premium%20V2a.Lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EliasGamer780YT/Gamers-X-V2-Premium/main/Gamers%20X%20Premium%20V2e.Lua"))()
      for i,v in pairs(ct) do v:Disconnect() end
 end)
 --Commands-
